@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, Platform, MenuController, AlertController } from 'ionic-angular';
+import { Facebook } from '@ionic-native/facebook';
+import { DataProvider } from '../../providers/data/data';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -14,9 +11,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public menuCtrl: MenuController,
+    public platform: Platform,
+    public alertCtrl: AlertController,
+    public facebook: Facebook,
+    public dataService: DataProvider
+  ) {
+    this.menuCtrl.enable(false);
   }
 
+  login(): void{
+    this.getProfile();
+  }
+
+  getProfile(): void{
+    this.menuCtrl.enable(true);
+    this.navCtrl.setRoot('HomePage')
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
