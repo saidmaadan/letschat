@@ -33,6 +33,7 @@
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-crosswalk-webview": "^2.3.0",
         "cordova-plugin-device": "^1.1.4",
+        "cordova-plugin-facebook4": "^1.9.1",
         "cordova-plugin-inappbrowser": "^1.7.1",
         "cordova-plugin-keyboard": "^1.1.5",
         "cordova-plugin-splashscreen": "^4.0.3",
@@ -71,6 +72,10 @@
                 "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
                 "XWALK_MODE": "embedded",
                 "XWALK_MULTIPLEAPK": "true"
+            },
+            "cordova-plugin-facebook4": {
+                "APP_ID": "134881977067713",
+                "APP_NAME": "Letschat"
             }
         },
         "platforms": [

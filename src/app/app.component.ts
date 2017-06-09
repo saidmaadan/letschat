@@ -28,6 +28,14 @@ export class MyApp {
 
   }
   logout(): void{
+    this.menuCtrl.close();
+    this.menuCtrl.enable(false);
+    this.nav.setRoot('LoginPage');
+    this.dataService.fbid = null;
+    this.dataService.username = null;
+    this.dataService.picture = null;
+
+    this.facebook.logout();
 
   }
 }
