@@ -13,12 +13,12 @@
 
   <ion-list no-lines>
 
-    <ion-item>
+    <ion-item *ngFor="let message of messages">
       <ion-avatar item-left>
-        <img src="">
+        <img src="{{message.picture}}">
       </ion-avatar>
-      <h2>Name here</h2>
-      <p>message here</p>
+      <h2>{{message.username}}</h2>
+      <p>{{message.message}}</p>
     </ion-item>
 
   </ion-list>
