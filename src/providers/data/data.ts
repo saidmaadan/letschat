@@ -1,9 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
 import PouchDB from 'pouchdb';
+import { Apikey } from '../../../private/apikey';
 
 @Injectable()
 export class DataProvider {
-
+  apikey: Apikey;
   fbid: number;
   username: string;
   picture: string;
@@ -14,11 +15,11 @@ export class DataProvider {
   remote: string;
 
   constructor(public zone: NgZone){
-
-    this.db = new PouchDB('letschat23');
-    this.cloudantUsername = 'YourAPIUsernameHere';
-    this.cloudantPassword = 'YourAPIPasswordHere';
-    this.remote = 'https://YOUR-URL-HERE-bluemix.cloudant.com/chat';
+    this.apikey = new Apikey();
+    this.db = new PouchDB(this.apikey.databaseName);
+    this.cloudantUsername = this.apikey.cloudantUsername; //YourAPIUsernameHere;
+    this.cloudantPassword = this.apikey.cloudantPassword;//YourAPIPasswordHere;
+    this.remote = this.apikey.remote; //`https://YOUR-URL-HERE-bluemix.cloudant.com/letschat';
 
     //Set up PouchDB
     let options = {

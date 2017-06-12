@@ -3,8 +3,6 @@ import { Facebook } from '@ionic-native/facebook';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { DataProvider } from '../providers/data/data';
-// import { LoginPage } from '../pages/login/login';
-// import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
